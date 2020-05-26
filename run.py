@@ -48,12 +48,24 @@ model.add(MaxPool2D(pool_size=(2, 2)))
 # Second Convolution Layer
 model.add(Conv2D(filters=64, kernel_size=(3, 3), activation='relu'))
 model.add(MaxPool2D(pool_size=(2, 2)))
+model.add(Conv2D(filters=64, kernel_size=(3, 3), activation='relu'))
+model.add(MaxPool2D(pool_size=(2, 2)))
+model.add(Conv2D(filters=128, kernel_size=(3, 3), activation='relu'))
+model.add(MaxPool2D(pool_size=(2, 2)))
+model.add(Conv2D(filters=128, kernel_size=(3, 3), activation='relu'))
+model.add(MaxPool2D(pool_size=(2, 2)))
 
 # Flattening layer
 model.add(Flatten())
 
 # Fully Connected Layers
 model.add(Dense(units=512, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(uints=256, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(uints=128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(uints=64, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(units=1, activation='sigmoid'))
 
