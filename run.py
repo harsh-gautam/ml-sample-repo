@@ -62,7 +62,7 @@ model.summary()
 # compiling the model
 model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["accuracy"])
 
-epochs = 8
+epochs = 5
 steps_per_epochs = round(20000*(1.-0.1)/BATCH_SIZE)
 validation_steps=round(5000*0.1/BATCH_SIZE)
 
